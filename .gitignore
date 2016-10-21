@@ -12,6 +12,9 @@
 
 # Build results
 [Dd]ebug/
+![Dd]ebug/music.xml
+![Dd]ebug/music.xsd
+![Dd]ebug/taglib-sharp.dll
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
