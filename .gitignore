@@ -11,14 +11,14 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+#[Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 [Ll]og/
 
@@ -251,6 +251,4 @@ paket-files/
 .idea/
 *.sln.iml
 
-!/CagedTunes/bin/Debug/music.xml
-!/CagedTunes/bin/Debug/music.xsd
-!/CagedTunes/bin/Debug/taglib-sharp.dll
+/CagedTunes/bin/Debug/*exe*
