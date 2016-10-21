@@ -12,9 +12,9 @@
 
 # Build results
 [Dd]ebug/
-!CagedTunes/bin/[Dd]ebug/music.xml
-!CagedTunes/bin/[Dd]ebug/music.xsd
-!CagedTunes/bin/[Dd]ebug/taglib-sharp.dll
+!/CagedTunes/bin/[Dd]ebug/music.xml
+!/CagedTunes/bin/[Dd]ebug/music.xsd
+!/CagedTunes/bin/[Dd]ebug/taglib-sharp.dll
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
