@@ -9,7 +9,7 @@
     <Grid>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="267" VerticalAlignment="Top" Width="100" Margin="10,42,0,0"/>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="517"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Height="242" Width="381"/>
+        <DataGrid x:Name="musicGrid" HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Height="242" Width="381"/>
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,289,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,289,0,0" VerticalAlignment="Top" Width="75"/>
 
