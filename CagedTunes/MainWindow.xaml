@@ -15,7 +15,7 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="517"/>
-        <DataGrid x:Name="musicGrid" CanUserAddRows="False" AutoGenerateColumns="False" Margin="126,42,10,35">
+        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,42,10,35">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title"/>
