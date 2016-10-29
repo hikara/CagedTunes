@@ -48,13 +48,7 @@ namespace CagedTunes
                 songItems.Add(s);
             }
 
-            musicGrid.ItemsSource = songItems;
-
-            // Select the first item
-            if (musicGrid.Items.Count > 0)
-            {
-                musicGrid.SelectedItem = musicGrid.Items[0];
-            }
+            setMusicGridItems(songItems);
 
             playlistBox.Items.Add("All Music");
             playlistBox.SelectedItem = playlistBox.Items[0];
@@ -68,7 +62,11 @@ namespace CagedTunes
 
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            ObservableCollection<Song> songItems = musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString());
+            setMusicGridItems(musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString()));
+        }
+
+        private void setMusicGridItems(ObservableCollection<Song> songItems)
+        {
             musicGrid.ItemsSource = songItems;
             if (musicGrid.Items.Count > 0)
             {
