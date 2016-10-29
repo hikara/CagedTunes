@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CagedTunes"
         mc:Ignorable="d"
-        Title="CagedTunes" Height="350" Width="525">
+        Title="CagedTunes" Height="370" Width="625">
     <Grid>
         <ListBox x:Name="playlistBox" HorizontalAlignment="Left" Width="100" Margin="10,42,0,10" MouseLeftButtonDown="playlistBox_MouseLeftButtonDown">
             <ListBox.ItemContainerStyle>
@@ -14,7 +14,7 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="517"/>
+        <ToolBar x:Name="toolBar" Height="28" VerticalAlignment="Top"/>
         <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,42,10,35">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
