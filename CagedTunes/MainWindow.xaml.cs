@@ -29,35 +29,9 @@ namespace CagedTunes
 
             mediaPlayer = new MediaPlayer();
 
-            try
-            {
-                musicLib = new MusicLib();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error loading file: " + e.Message);
-            }
-
-            // Put the ids to a ObservableCollection which has a Remove method for use later.
-            // The UI will update itself automatically if any changes are made to this collection.
-            List<string> items = new List<string>(musicLib.SongIds);
-            ObservableCollection<Song> songItems = new ObservableCollection<Song>();
-            for (int count = 0; count < items.Count(); count++)
-            {
-                Song s = musicLib.GetSong(Convert.ToInt32(items[count]));
-                songItems.Add(s);
-            }
-
-            setMusicGridItems(songItems);
-
-            playlistBox.Items.Add("All Music");
-            playlistBox.SelectedItem = playlistBox.Items[0];
-
-            foreach (string playlist in musicLib.Playlists)
-            {
-                playlistBox.Items.Add(playlist);
-            }
-
+            initializeMusicLib();
+            initializeMusicGrid();
+            initializePlaylistBox();
         }
 
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -71,6 +45,42 @@ namespace CagedTunes
             if (musicGrid.Items.Count > 0)
             {
                 musicGrid.SelectedItem = musicGrid.Items[0];
+            }
+        }
+
+        private void initializeMusicLib()
+        {
+            try
+            {
+                musicLib = new MusicLib();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error loading file: " + e.Message);
+            }
+        }
+
+        private void initializeMusicGrid()
+        {
+            List<string> items = new List<string>(musicLib.SongIds);
+            ObservableCollection<Song> songItems = new ObservableCollection<Song>();
+            for (int count = 0; count < items.Count(); count++)
+            {
+                Song s = musicLib.GetSong(Convert.ToInt32(items[count]));
+                songItems.Add(s);
+            }
+
+            setMusicGridItems(songItems);
+        }
+
+        private void initializePlaylistBox()
+        {
+            playlistBox.Items.Add("All Music");
+            playlistBox.SelectedItem = playlistBox.Items[0];
+
+            foreach (string playlist in musicLib.Playlists)
+            {
+                playlistBox.Items.Add(playlist);
             }
         }
     }
