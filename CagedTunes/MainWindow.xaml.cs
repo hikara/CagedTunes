@@ -68,14 +68,12 @@ namespace CagedTunes
 
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            //ObservableCollection<Song> songItems = musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString());
-            //foreach ( string id in )
-            //{
-
-            //}
-
-            
-            //musicGrid.ItemSource = 
+            ObservableCollection<Song> songItems = musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString());
+            musicGrid.ItemsSource = songItems;
+            if (musicGrid.Items.Count > 0)
+            {
+                musicGrid.SelectedItem = musicGrid.Items[0];
+            }
         }
     }
 }
