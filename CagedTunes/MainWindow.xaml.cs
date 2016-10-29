@@ -36,7 +36,10 @@ namespace CagedTunes
 
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            setMusicGridItems(musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString()));
+            if (sender.ToString().Substring(37) == "All Music")
+                initializeMusicGrid();
+            else
+                setMusicGridItems(musicLib.GetSongsFromPlaylist(sender.ToString().Substring(37)));
         }
 
         private void setMusicGridItems(ObservableCollection<Song> songItems)
