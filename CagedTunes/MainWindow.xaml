@@ -23,6 +23,17 @@
                 <DataGridTextColumn Binding="{Binding Album}" Header="Album"/>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre"/>
             </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border Background="AliceBlue">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Title}" />
+                            <Image Source="{Binding albumImage}" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+
         </DataGrid>
 
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom"/>
