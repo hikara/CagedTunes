@@ -7,11 +7,26 @@
         mc:Ignorable="d"
         Title="CagedTunes" Height="350" Width="525">
     <Grid>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="267" VerticalAlignment="Top" Width="100" Margin="10,42,0,0"/>
+        <ListBox x:Name="playlistBox" HorizontalAlignment="Left" Width="100" Margin="10,42,0,10" MouseLeftButtonDown="playlistBox_MouseLeftButtonDown">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="playlistBox_MouseLeftButtonDown" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="517"/>
-        <DataGrid x:Name="musicGrid" HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Height="242" Width="381"/>
-        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,289,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,289,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid x:Name="musicGrid" CanUserAddRows="False" AutoGenerateColumns="False" Margin="126,42,10,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title"/>
+                <DataGridTextColumn Binding="{Binding Artist}" Header="Artist"/>
+                <DataGridTextColumn Binding="{Binding Album}" Header="Album"/>
+                <DataGridTextColumn Binding="{Binding Genre}" Header="Genre"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

@@ -56,7 +56,26 @@ namespace CagedTunes
                 musicGrid.SelectedItem = musicGrid.Items[0];
             }
 
+            playlistBox.Items.Add("All Music");
+            playlistBox.SelectedItem = playlistBox.Items[0];
+
+            foreach (string playlist in musicLib.Playlists)
+            {
+                playlistBox.Items.Add(playlist);
+            }
+
         }
 
+        private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //ObservableCollection<Song> songItems = musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString());
+            //foreach ( string id in )
+            //{
+
+            //}
+
+            
+            //musicGrid.ItemSource = 
+        }
     }
 }

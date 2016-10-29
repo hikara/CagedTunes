@@ -6,6 +6,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Collections.ObjectModel;
 
 namespace CagedTunes
 {
@@ -423,5 +424,39 @@ namespace CagedTunes
 
             return table;
         }
+
+        //public ObservableCollection<Song> GetSongsFromPlaylist(string playlistName)
+        //{
+        //    DataTable table = SongsForPlaylist(playlistName);
+        //    var songs = from r1 in musicDataSet.Tables["playlist_song"].AsEnumerable()
+        //                join r2 in musicDataSet.Tables["song"].AsEnumerable()
+        //                     on r1["song_id"] equals r2["id"]
+        //                where (string)r1["playlist_name"] == playlistName
+        //                orderby r1["position"]
+        //                select new
+        //                {
+        //                    Id = r2["id"],
+        //                    Position = r1["position"],
+        //                    Title = r2["title"],
+        //                    Artist = r2["artist"],
+        //                    Album = r2["album"],
+        //                    Genre = r2["genre"]
+        //                };
+        //    foreach (var s in songs)
+        //    {
+        //        Console.WriteLine(s.ToString());
+        //        DataRow newRow = table.NewRow();
+        //        newRow["id"] = s.Id;
+        //        newRow["position"] = s.Position;
+        //        newRow["title"] = s.Title;
+        //        newRow["artist"] = s.Artist;
+        //        newRow["album"] = s.Album;
+        //        newRow["genre"] = s.Genre;
+        //        Song newSong = new Song();
+        //        newSong.Id = newRow["id"];
+        //        table.Rows.Add(newRow);
+        //    }
+
+        //}
     }
 }
