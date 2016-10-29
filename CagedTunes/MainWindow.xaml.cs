@@ -38,7 +38,7 @@ namespace CagedTunes
         {
             if (sender.ToString().Substring(37) == "All Music")
                 initializeMusicGrid();
-            else
+            else if (sender.ToString().Substring(37,7) != ".Count:")
                 setMusicGridItems(musicLib.GetSongsFromPlaylist(sender.ToString().Substring(37)));
         }
 
