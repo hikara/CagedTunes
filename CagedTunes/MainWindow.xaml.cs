@@ -118,5 +118,10 @@ namespace CagedTunes
             aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
+
+        private void DeleteCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            
+        }
     }
 }
