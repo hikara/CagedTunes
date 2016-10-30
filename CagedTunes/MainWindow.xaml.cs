@@ -40,9 +40,15 @@ namespace CagedTunes
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (sender.ToString().Substring(37) == "All Music")
+            {
+                musicGrid.IsReadOnly = false;
                 initializeMusicGrid();
+            }    
             else if (sender.ToString().Substring(37,7) != ".Count:")
+            {
+                musicGrid.IsReadOnly = true;
                 setMusicGridItems(musicLib.GetSongsFromPlaylist(sender.ToString().Substring(37)));
+            }
         }
 
         private void setMusicGridItems(ObservableCollection<Song> songItems)
@@ -108,8 +114,8 @@ namespace CagedTunes
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
-            btnPlay.IsEnabled = true;
-            btnStop.IsEnabled = true;
+            btnPlay.IsEnabled = false;
+            btnStop.IsEnabled = false;
         }
     }
 }
