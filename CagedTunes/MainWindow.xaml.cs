@@ -24,6 +24,7 @@ namespace CagedTunes
         private MediaPlayer mediaPlayer;
         private MusicLib musicLib;
         private AddPlaylist newPlaylist;
+        private Microsoft.Win32.OpenFileDialog openFileDialog;
 
         public MainWindow()
         {
@@ -74,7 +75,6 @@ namespace CagedTunes
                 Song s = musicLib.GetSong(Convert.ToInt32(items[count]));
                 songItems.Add(s);
             }
-
             setMusicGridItems(songItems);
         }
 
@@ -91,7 +91,9 @@ namespace CagedTunes
 
         private void addNewSong_Click(object sender, RoutedEventArgs e)
         {
-            btnPlay.IsEnabled = false;
+            openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Filter = "Music (.mp3)|*.mp3|Music (.mp4a)|*.mp4a|Music(.wma)|*.wma|Music(.wav)|*.wav";
+            openFileDialog.ShowDialog();
         }
 
         private void addNewPlaylist_Click(object sender, RoutedEventArgs e)
@@ -109,7 +111,5 @@ namespace CagedTunes
             btnPlay.IsEnabled = true;
             btnStop.IsEnabled = true;
         }
-
-
     }
 }
