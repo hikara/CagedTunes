@@ -28,14 +28,15 @@ namespace CagedTunes
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             string potentialPlaylistName = playlistSubmissionBox.Text.ToString().Trim();
-            if (potentialPlaylistName == "" || potentialPlaylistName == "All Music" || currentMusicLib.PlaylistExists(potentialPlaylistName) 
+            if (potentialPlaylistName == "" || potentialPlaylistName == "All Music" || currentMusicLib.PlaylistExists(potentialPlaylistName)
                 || (potentialPlaylistName.Length >= 7 && potentialPlaylistName.Substring(0, 7) == ".Count:"))
             {
                 MessageBox.Show("Sorry, that is an invalid name for a playlist, please select another.", "Error");
             }
             else
             {
-                
+                currentMusicLib.AddPlaylist(potentialPlaylistName);
+                Close();
             }
         }
 

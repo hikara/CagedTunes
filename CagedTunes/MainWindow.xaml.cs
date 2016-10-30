@@ -99,6 +99,9 @@ namespace CagedTunes
             newPlaylist = new AddPlaylist();
             newPlaylist.currentMusicLib = musicLib;
             newPlaylist.ShowDialog();
+            musicLib = newPlaylist.currentMusicLib;
+            playlistBox.Items.Clear();
+            initializePlaylistBox();
         }
 
         private void about_Click(object sender, RoutedEventArgs e)
