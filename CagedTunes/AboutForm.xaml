@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CagedTunes"
         mc:Ignorable="d"
-        Title="AboutForm" Height="300" Width="300">
-    <Grid>
-        
+        Title="CagedTunes - About" Height="214.285" Width="415.966" ResizeMode="NoResize" Background="#FFFFFEF4">
+
+
+    <Grid Margin="0,0,0,2">
+        <Label x:Name="label" Content="CagedTunes:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18.667"/>
+        <Label x:Name="label_Copy" Content="A Nicolas Cage themed music player " HorizontalAlignment="Left" Margin="10,44,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="created for your everyday needs." HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="27"/>
+        <Label x:Name="label_Copy2" Content="Made by John Thompson and Jared Nesbit" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Height="27"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="231" Margin="162,-13,0,-35" VerticalAlignment="Top" Width="248" Source="youdontsay-art.png"/>
+        <Button x:Name="btnExit" Content="OK" HorizontalAlignment="Left" Margin="162,155,0,0" VerticalAlignment="Top" Width="75"/>
+
+
     </Grid>
 </Window>
