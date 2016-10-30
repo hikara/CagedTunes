@@ -16,6 +16,12 @@
                     <EventSetter Event="PreviewMouseLeftButtonDown" Handler="playlistBox_MouseLeftButtonDown" />
                 </Style>
             </ListBox.ItemContainerStyle>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="Delete">
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
         </ListBox>
         <ToolBar x:Name="playlistAdditionsAndInfoBar" Height="41" VerticalAlignment="Top">
             <Button x:Name="addNewSong" Height="35" VerticalAlignment="Top" Width="45" Click="addNewSong_Click">
