@@ -121,7 +121,16 @@ namespace CagedTunes
 
         private void DeleteCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            
+            if (playlistBox.SelectedItem.ToString() == "All Music" || (playlistBox.SelectedItem.ToString().Length >= 7 && playlistBox.SelectedItem.ToString().Substring(0, 7) == ".Count:"))
+            {
+                MessageBox.Show("Sorry, what you have selected is unable to be deleted.");
+            }
+            else
+            {
+                musicLib.DeletePlaylist(playlistBox.SelectedItem.ToString());
+                playlistBox.Items.Clear();
+                initializePlaylistBox();
+            }
         }
     }
 }
