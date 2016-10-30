@@ -7,15 +7,25 @@
         mc:Ignorable="d"
         Title="CagedTunes" Height="370" Width="625">
     <Grid>
-        <ListBox x:Name="playlistBox" HorizontalAlignment="Left" Width="100" Margin="10,42,0,10" MouseLeftButtonDown="playlistBox_MouseLeftButtonDown">
+        <ListBox x:Name="playlistBox" HorizontalAlignment="Left" Width="100" Margin="10,55,0,10" MouseLeftButtonDown="playlistBox_MouseLeftButtonDown">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <EventSetter Event="PreviewMouseLeftButtonDown" Handler="playlistBox_MouseLeftButtonDown" />
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <ToolBar x:Name="toolBar" Height="28" VerticalAlignment="Top"/>
-        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,42,10,35">
+        <ToolBar x:Name="toolBar" Height="41" VerticalAlignment="Top">
+            <Button x:Name="addNewSong" Height="35" VerticalAlignment="Top" Width="45">
+                <Image Source="new-folder-icon-44454.png"></Image>
+            </Button>
+            <Button x:Name="addNewPlaylist" Height="35" VerticalAlignment="Top" Width="45">
+                <Image Source="playlist_new.png"></Image>
+            </Button>
+            <Button x:Name="about" Height="35" VerticalAlignment="Top" Width="45">
+                <Image Source="info.png"></Image>
+            </Button>
+        </ToolBar>
+        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title"/>
