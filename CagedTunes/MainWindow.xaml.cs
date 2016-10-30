@@ -23,6 +23,8 @@ namespace CagedTunes
     {
         private MediaPlayer mediaPlayer;
         private MusicLib musicLib;
+        private AddPlaylist newPlaylist;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -94,7 +96,9 @@ namespace CagedTunes
 
         private void addNewPlaylist_Click(object sender, RoutedEventArgs e)
         {
-            btnStop.IsEnabled = false;
+            newPlaylist = new AddPlaylist();
+            newPlaylist.currentMusicLib = musicLib;
+            newPlaylist.ShowDialog();
         }
 
         private void about_Click(object sender, RoutedEventArgs e)
@@ -102,5 +106,7 @@ namespace CagedTunes
             btnPlay.IsEnabled = true;
             btnStop.IsEnabled = true;
         }
+
+
     }
 }

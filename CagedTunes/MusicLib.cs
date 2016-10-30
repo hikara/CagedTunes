@@ -10,7 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace CagedTunes
 {
-    class MusicLib
+    public class MusicLib
     {
         private DataSet musicDataSet;
 

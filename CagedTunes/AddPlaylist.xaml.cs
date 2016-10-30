@@ -19,9 +19,29 @@ namespace CagedTunes
     /// </summary>
     public partial class AddPlaylist : Window
     {
+        public MusicLib currentMusicLib { get; set; }
         public AddPlaylist()
         {
             InitializeComponent();
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            string potentialPlaylistName = playlistSubmissionBox.Text.ToString().Trim();
+            if (potentialPlaylistName == "" || potentialPlaylistName == "All Music" || currentMusicLib.PlaylistExists(potentialPlaylistName) 
+                || (potentialPlaylistName.Length >= 7 && potentialPlaylistName.Substring(0, 7) == ".Count:"))
+            {
+                MessageBox.Show("Sorry, that is an invalid name for a playlist, please select another.", "Error");
+            }
+            else
+            {
+                
+            }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
