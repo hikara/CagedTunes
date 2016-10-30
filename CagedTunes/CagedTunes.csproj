@@ -101,8 +101,10 @@
     <Resource Include="new-folder-icon-44454.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="info.png" />
     <Resource Include="playlist_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
