@@ -24,9 +24,9 @@ namespace CagedTunes
         private MediaPlayer mediaPlayer;
         private MusicLib musicLib;
         private AddPlaylist newPlaylist;
-        private Microsoft.Win32.OpenFileDialog openFileDialog;
         private AboutForm aboutForm;
         private RenamePlaylist renamePlaylist;
+        private String currentlyPlaying = null;
 
         public MainWindow()
         {
@@ -193,11 +193,17 @@ namespace CagedTunes
             Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
             mediaPlayer.Open(new Uri(s.Filename));
             mediaPlayer.Play();
+            currentlyPlaying = s.Filename;
         }
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
         {
-            mediaPlayer.Stop();
+            if (currentlyPlaying != null)
+            {
+                mediaPlayer.Open(new Uri(currentlyPlaying));
+                mediaPlayer.Stop();
+            }
+            currentlyPlaying = null;
         }
     }
 }
