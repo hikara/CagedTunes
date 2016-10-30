@@ -86,5 +86,21 @@ namespace CagedTunes
                 playlistBox.Items.Add(playlist);
             }
         }
+
+        private void addNewSong_Click(object sender, RoutedEventArgs e)
+        {
+            btnPlay.IsEnabled = false;
+        }
+
+        private void addNewPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            btnStop.IsEnabled = false;
+        }
+
+        private void about_Click(object sender, RoutedEventArgs e)
+        {
+            btnPlay.IsEnabled = true;
+            btnStop.IsEnabled = true;
+        }
     }
 }

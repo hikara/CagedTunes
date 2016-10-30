@@ -14,14 +14,14 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <ToolBar x:Name="toolBar" Height="41" VerticalAlignment="Top">
-            <Button x:Name="addNewSong" Height="35" VerticalAlignment="Top" Width="45">
+        <ToolBar x:Name="playlistAdditionsAndInfoBar" Height="41" VerticalAlignment="Top">
+            <Button x:Name="addNewSong" Height="35" VerticalAlignment="Top" Width="45" Click="addNewSong_Click">
                 <Image Source="new-folder-icon-44454.png"></Image>
             </Button>
-            <Button x:Name="addNewPlaylist" Height="35" VerticalAlignment="Top" Width="45">
+            <Button x:Name="addNewPlaylist" Height="35" VerticalAlignment="Top" Width="45" Click="addNewPlaylist_Click">
                 <Image Source="playlist_new.png"></Image>
             </Button>
-            <Button x:Name="about" Height="35" VerticalAlignment="Top" Width="45">
+            <Button x:Name="about" Height="35" VerticalAlignment="Top" Width="45" Click="about_Click">
                 <Image Source="info.png"></Image>
             </Button>
         </ToolBar>

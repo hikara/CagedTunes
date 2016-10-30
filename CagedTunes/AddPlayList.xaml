@@ -1,0 +1,15 @@
+﻿<Window x:Class="CagedTunes.AddPlaylist"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CagedTunes"
+        mc:Ignorable="d"
+        Title="New Playlist" Height="215.966" Width="306.723">
+    <Grid>
+        <Label x:Name="instructions" Content="Step 1: Type the name for your new playlist in the &#xD;&#xA;textbox below.&#xD;&#xA;Step 2: Click the submit button to create your new&#xD;&#xA;playlist." HorizontalAlignment="Left" Margin="0,0,-9,111" VerticalAlignment="Bottom" Width="308" Height="74"/>
+        <TextBox x:Name="playlistSubmissionBox" Height="23" Margin="44,101,44,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="44,155,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="180,155,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>
