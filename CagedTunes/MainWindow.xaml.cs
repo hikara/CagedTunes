@@ -25,6 +25,7 @@ namespace CagedTunes
         private MusicLib musicLib;
         private AddPlaylist newPlaylist;
         private Microsoft.Win32.OpenFileDialog openFileDialog;
+        private AboutForm aboutForm;
 
         public MainWindow()
         {
@@ -114,8 +115,8 @@ namespace CagedTunes
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
-            btnPlay.IsEnabled = false;
-            btnStop.IsEnabled = false;
+            aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
     }
 }
