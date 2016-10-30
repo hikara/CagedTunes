@@ -10,6 +10,33 @@
         <CommandBinding Command="Delete" Executed="DeleteCommandBinding_Executed" />
         <CommandBinding Command="Replace" Executed="RenameCommandBinding_Executed" />
     </Window.CommandBindings>
+    <Window.Resources>
+        <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
+            <Border Name="Border" BorderThickness="2" CornerRadius="3"
+                BorderBrush="Magenta" Background="SkyBlue">
+                <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"                                 
+                              TextBlock.FontWeight="Bold"  
+                              TextBlock.Foreground="DarkBlue"
+                              Content="{TemplateBinding Content}" />
+            </Border>
+            
+        </ControlTemplate>
+        <Style x:Key="MyButtonStyle" >
+            <Setter Property="Button.Opacity" Value="0.6" />
+            
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property="Button.Opacity" Value=".75" />
+                </Trigger>
+                <Trigger Property="Button.IsPressed" Value="True">
+                    <Setter Property="Button.Opacity" Value="1" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <ListBox x:Name="playlistBox" HorizontalAlignment="Left" Width="100" Margin="10,55,0,10" MouseLeftButtonDown="playlistBox_MouseLeftButtonDown">
             <ListBox.ItemContainerStyle>
@@ -21,7 +48,7 @@
                 <ContextMenu>
                     <MenuItem Command="Delete">
                     </MenuItem>
-                    <MenuItem Command="Replace">
+                    <MenuItem Command="Replace" Header="Rename">
                     </MenuItem>
                 </ContextMenu>
             </ListBox.ContextMenu>
@@ -58,8 +85,8 @@
 
         </DataGrid>
 
-        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom"/>
-        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}"/>
 
     </Grid>
 </Window>
