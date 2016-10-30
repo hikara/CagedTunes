@@ -187,5 +187,15 @@ namespace CagedTunes
         {
             MessageBox.Show(errorMessage, "MiniPlayer", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        private void btnPlay_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnStop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
