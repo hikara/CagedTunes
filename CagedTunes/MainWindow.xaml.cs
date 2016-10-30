@@ -132,5 +132,10 @@ namespace CagedTunes
                 initializePlaylistBox();
             }
         }
+
+        private void RenameCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
     }
 }
