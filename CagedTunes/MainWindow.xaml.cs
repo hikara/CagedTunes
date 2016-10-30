@@ -134,6 +134,7 @@ namespace CagedTunes
             }
             this.IsEnabled = true;
             initializeMusicGrid();
+            musicGrid.SelectedIndex = musicGrid.Items.Count - 1;
         }
 
         private void addNewPlaylist_Click(object sender, RoutedEventArgs e)
