@@ -39,6 +39,7 @@ namespace CagedTunes
             initializePlaylistBox();
         }
 
+
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (sender.ToString().Substring(37) == "All Music")
@@ -99,9 +100,38 @@ namespace CagedTunes
 
         private void addNewSong_Click(object sender, RoutedEventArgs e)
         {
-            openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            openFileDialog.Filter = "Music (.mp3)|*.mp3|Music (.mp4a)|*.mp4a|Music(.wma)|*.wma|Music(.wav)|*.wav";
-            openFileDialog.ShowDialog();
+           this.IsEnabled = false;
+            // Configure open file dialog box
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.FileName = "";
+            openFileDialog.DefaultExt = "*.wma;*.wav;*mp3";
+            openFileDialog.Filter = "Media files|*.mp3;*.m4a;*.wma;*.wav|MP3 (*.mp3)|*.mp3|M4A (*.m4a)|*.m4a|Windows Media Audio (*.wma)|*.wma|Wave files (*.wav)|*.wav|All files|*.*";
+
+            // Show open file dialog box
+            bool? result = openFileDialog.ShowDialog();
+
+            // Load the selected song
+            if (result == true)
+            {
+                Song s = null;
+                try
+                {
+                    s = new Song();
+                    s = musicLib.GetSongDetails(openFileDialog.FileName);
+                }
+                catch (TagLib.UnsupportedFormatException)
+                {
+                    DisplayError("You did not select a valid song file.");
+                }
+                catch (Exception ex)
+                {
+                    DisplayError(ex.Message);
+                }
+                if (s != null)
+                {
+                    musicLib.AddSong(s);
+                }
+            }
         }
 
         private void addNewPlaylist_Click(object sender, RoutedEventArgs e)
@@ -149,6 +179,10 @@ namespace CagedTunes
                 musicLib = renamePlaylist.currentMusicLib;
                 initializePlaylistBox();
             }
+        }
+        private void DisplayError(string errorMessage)
+        {
+            MessageBox.Show(errorMessage, "MiniPlayer", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }

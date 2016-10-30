@@ -442,6 +442,23 @@ namespace CagedTunes
             }
             return songs;
         }
+        public Song GetSongDetails(string filename)
+        {
+            Song s = null;
+            //PM> Install-Package taglib
+            // http://stackoverflow.com/questions/1750464/how-to-read-and-write-id3-tags-to-an-mp3-in-c
+            TagLib.File file = TagLib.File.Create(filename);
 
+            s = new Song
+            {
+                Title = file.Tag.Title,
+                Artist = file.Tag.AlbumArtists.Length > 0 ? file.Tag.AlbumArtists[0] : "",
+                Album = file.Tag.Album,
+                Genre = file.Tag.Genres.Length > 0 ? file.Tag.Genres[0] : "",
+                Length = file.Properties.Duration.Minutes + ":" + file.Properties.Duration.Seconds,
+                Filename = filename
+            };
+            return s;
+        }
     }
 }
