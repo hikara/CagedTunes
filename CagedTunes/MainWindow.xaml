@@ -85,7 +85,7 @@
 
         </DataGrid>
 
-        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}"/>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}" Click="btnPlay_Click"/>
         <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}"/>
 
     </Grid>
