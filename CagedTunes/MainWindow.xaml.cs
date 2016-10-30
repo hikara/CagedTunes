@@ -26,6 +26,7 @@ namespace CagedTunes
         private AddPlaylist newPlaylist;
         private Microsoft.Win32.OpenFileDialog openFileDialog;
         private AboutForm aboutForm;
+        private RenamePlaylist renamePlaylist;
 
         public MainWindow()
         {
@@ -123,7 +124,7 @@ namespace CagedTunes
         {
             if (playlistBox.SelectedItem.ToString() == "All Music" || (playlistBox.SelectedItem.ToString().Length >= 7 && playlistBox.SelectedItem.ToString().Substring(0, 7) == ".Count:"))
             {
-                MessageBox.Show("Sorry, what you have selected is unable to be deleted.");
+                MessageBox.Show("Sorry, what you have selected is unable to be deleted.", "Error");
             }
             else
             {
@@ -135,7 +136,19 @@ namespace CagedTunes
 
         private void RenameCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
+            if (playlistBox.SelectedItem.ToString() == "All Music" || (playlistBox.SelectedItem.ToString().Length >= 7 && playlistBox.SelectedItem.ToString().Substring(0, 7) == ".Count:"))
+            {
+                MessageBox.Show("Sorry, what you have selected is unable to be renamed.", "Error");
+            }
+            else
+            {
+                renamePlaylist = new RenamePlaylist(playlistBox.SelectedItem.ToString());
+                renamePlaylist.currentMusicLib = musicLib;
+                renamePlaylist.ShowDialog();
+                playlistBox.Items.Clear();
+                musicLib = renamePlaylist.currentMusicLib;
+                initializePlaylistBox();
+            }
         }
     }
 }

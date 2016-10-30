@@ -19,9 +19,32 @@ namespace CagedTunes
     /// </summary>
     public partial class RenamePlaylist : Window
     {
-        public RenamePlaylist()
+        public MusicLib currentMusicLib { get; set; }
+        private string oldName;
+        public RenamePlaylist(string old)
         {
             InitializeComponent();
+            oldName = old;
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            string potentialPlaylistName = playlistSubmissionBox.Text.ToString().Trim();
+            if (potentialPlaylistName == "" || potentialPlaylistName == "All Music" || currentMusicLib.PlaylistExists(potentialPlaylistName)
+                || (potentialPlaylistName.Length >= 7 && potentialPlaylistName.Substring(0, 7) == ".Count:"))
+            {
+                MessageBox.Show("Sorry, that is an invalid name for a playlist, please select another.", "Error");
+            }
+            else
+            {
+                currentMusicLib.RenamePlaylist(oldName, potentialPlaylistName);
+                Close();
+            }
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

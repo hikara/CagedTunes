@@ -58,6 +58,9 @@
     <Compile Include="AboutForm.xaml.cs">
       <DependentUpon>AboutForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RenamePlaylist.xaml.cs">
+      <DependentUpon>RenamePlaylist.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Song.cs" />
     <Compile Include="AddPlaylist.xaml.cs">
       <DependentUpon>AddPlaylist.xaml</DependentUpon>
@@ -79,6 +82,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="AddPlaylist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RenamePlaylist.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
