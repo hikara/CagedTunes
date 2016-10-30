@@ -191,9 +191,12 @@ namespace CagedTunes
         private void btnPlay_Click(object sender, RoutedEventArgs e)
         {
             Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
-            mediaPlayer.Open(new Uri(s.Filename));
-            mediaPlayer.Play();
-            currentlyPlaying = s.Filename;
+            if (s.Filename != currentlyPlaying)
+            {
+                mediaPlayer.Open(new Uri(s.Filename));
+                mediaPlayer.Play();
+                currentlyPlaying = s.Filename;
+            }
         }
 
         private void btnStop_Click(object sender, RoutedEventArgs e)
