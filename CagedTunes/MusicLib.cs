@@ -119,14 +119,14 @@ namespace CagedTunes
                             }
                         }
                     }
-                    return "http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg";
+                    return null;
                 }
             }
             catch (WebException e)
             {
                 // A 400 response is returned when the song is not in their library
                 Console.WriteLine("Error: " + e.Message);
-                return "http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg";
+                return null;
             }
         }
         /// <summary>

@@ -72,6 +72,15 @@
     <genre />
     <albumImage>http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg</albumImage>
   </song>
+  <song>
+    <id>18</id>
+    <title>BIOS-D (feat. Mika Kobayashi)</title>
+    <artist />
+    <album>Guilty Crown Original Soundtrack</album>
+    <filename>C:\Users\jnesbit3\Desktop\New folder\BIOS-D (feat. Mika Kobayashi).mp3</filename>
+    <length>2:36</length>
+    <genre>Anime</genre>
+  </song>
   <playlist>
     <name>Cool stuff</name>
   </playlist>
