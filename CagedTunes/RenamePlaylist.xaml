@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CagedTunes"
         mc:Ignorable="d"
-    Title="Rename Playlist" Height="215.966" Width="306.723">
+    Title="Rename Playlist" ResizeMode="NoResize" Height="215.966" Width="306.723">
     <Grid>
         <Label x:Name="instructions" Content="Step 1: Type the new name for your playlist in the &#xD;&#xA;textbox below.&#xD;&#xA;Step 2: Click the submit button to rename your playlist." HorizontalAlignment="Left" Margin="0,0,-9,101" VerticalAlignment="Bottom" Width="308" Height="74"/>
         <TextBox x:Name="playlistSubmissionBox" Height="23" Margin="44,97,44,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
