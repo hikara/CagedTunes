@@ -81,6 +81,7 @@
                             <TextBlock FontWeight="Bold">Album:  <TextBlock Text="{Binding Album}" FontWeight="Normal"> </TextBlock></TextBlock>
                             <TextBlock FontWeight="Bold">Genre:  <TextBlock Text="{Binding Genre}" FontWeight="Normal"> </TextBlock></TextBlock>
                             <TextBlock FontWeight="Bold">Length:  <TextBlock Text="{Binding Length}" FontWeight="Normal"> </TextBlock></TextBlock>
+                            <TextBlock FontWeight="Bold">Pic:  <TextBlock Text="{Binding Pic}" FontWeight="Normal"> </TextBlock></TextBlock>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
