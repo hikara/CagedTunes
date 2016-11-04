@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CagedTunes"
         mc:Ignorable="d"
-        Title="CagedTunes" Height="370" Width="625" Icon="youdontsay-art (3).ico">
+        Title="CagedTunes" Height="370" Width="625" Icon="youdontsay-art (3).ico" Closing="Window_Closing">
     <Window.CommandBindings>
         <CommandBinding Command="Delete" Executed="DeleteCommandBinding_Executed" />
         <CommandBinding Command="Replace" Executed="RenameCommandBinding_Executed" />

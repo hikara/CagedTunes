@@ -208,5 +208,10 @@ namespace CagedTunes
             }
             currentlyPlaying = null;
         }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            musicLib.Save();
+        }
     }
 }
