@@ -9,6 +9,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="Delete" Executed="DeleteCommandBinding_Executed" />
         <CommandBinding Command="Replace" Executed="RenameCommandBinding_Executed" />
+        <CommandBinding Command="Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
         <CommandBinding Command="local:CustomCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
     </Window.CommandBindings>
     <Window.Resources>
@@ -92,7 +93,7 @@
         </DataGrid>
 
         <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Left" Margin="126,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}" Command="local:CustomCommands.Play"/>
-        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}" Click="btnStop_Click"/>
+        <Button x:Name="btnStop" Content="Stop" HorizontalAlignment="Left" Margin="206,0,0,10" Width="75" Height="20" VerticalAlignment="Bottom" Template="{StaticResource ButtonTemplate}" Style="{StaticResource MyButtonStyle}" Command="Stop"/>
 
     </Grid>
 </Window>

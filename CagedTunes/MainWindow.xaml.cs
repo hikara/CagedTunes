@@ -236,6 +236,18 @@ namespace CagedTunes
             mediaPlayer.Play();
             currentlyPlaying = s.Filename;
         }
+
+        private void Stop_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            mediaPlayer.Open(new Uri(currentlyPlaying));
+            mediaPlayer.Stop();
+            currentlyPlaying = null;
+        }
+
+        private void Stop_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = currentlyPlaying != null;
+        }
     }
 
     public static class CustomCommands
