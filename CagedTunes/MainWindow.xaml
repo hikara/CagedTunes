@@ -82,7 +82,7 @@
                             <TextBlock FontWeight="Bold">Genre:  <TextBlock Text="{Binding Genre}" FontWeight="Normal"> </TextBlock></TextBlock>
                             <TextBlock FontWeight="Bold">Length:  <TextBlock Text="{Binding Length}" FontWeight="Normal"> </TextBlock></TextBlock>
                             <TextBlock FontWeight="Bold">Pic:  <TextBlock Text="{Binding Pic}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <TextBlock FontWeight="Bold">Link:  <Hyperlink NavigateUri="{Binding Url}" FontWeight="Normal"> </Hyperlink></TextBlock>
+                            <TextBlock FontWeight="Bold">Link:  <Hyperlink NavigateUri="{Binding Url}"  RequestNavigate="Hyperlink_RequestNavigate" FontWeight="Normal">Click Here </Hyperlink></TextBlock>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
