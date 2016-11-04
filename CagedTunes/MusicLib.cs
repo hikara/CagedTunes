@@ -79,7 +79,8 @@ namespace CagedTunes
             row["filename"] = s.Filename;
             row["length"] = s.Length;
             row["genre"] = s.Genre;
-            row["pic"] = GetPic(s);
+            row["albumimage"] = GetPic(s);
+            row["url"] = s.Url;
             table.Rows.Add(row);
 
             // Update this song's ID

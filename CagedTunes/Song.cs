@@ -15,6 +15,7 @@ namespace CagedTunes
         public string Length { set; get; }
         public string Filename { set; get; }
         public string Pic { set; get; }
+        public string Url { set; get; }
 
         // Two songs are equal if all their properties are equal
         public override bool Equals(object obj)
@@ -25,7 +26,7 @@ namespace CagedTunes
 
             return s.Id == Id && s.Title == Title && s.Artist == Artist &&
                 s.Album == Album && s.Genre == Genre && s.Length == Length &&
-                s.Filename == Filename && s.Pic == Pic;
+                s.Filename == Filename && s.Pic == Pic && s.Url == Url;
         }
 
         public override int GetHashCode()
