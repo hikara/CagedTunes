@@ -76,8 +76,11 @@
                 <DataTemplate>
                     <Border Background="AliceBlue">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding Title}" />
-                            <Image Source="{Binding albumImage}" />
+                            <TextBlock FontWeight="Bold">Title:  <TextBlock Text="{Binding Title}" FontWeight="Normal"> </TextBlock></TextBlock>
+                            <TextBlock FontWeight="Bold">Artist:  <TextBlock Text="{Binding Artist}" FontWeight="Normal"> </TextBlock></TextBlock>
+                            <TextBlock FontWeight="Bold">Album:  <TextBlock Text="{Binding Album}" FontWeight="Normal"> </TextBlock></TextBlock>
+                            <TextBlock FontWeight="Bold">Genre:  <TextBlock Text="{Binding Genre}" FontWeight="Normal"> </TextBlock></TextBlock>
+                            <TextBlock FontWeight="Bold">Length:  <TextBlock Text="{Binding Length}" FontWeight="Normal"> </TextBlock></TextBlock>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
