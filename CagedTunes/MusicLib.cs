@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Collections.ObjectModel;
+using System.Net;
+using System.IO;
+using System.Xml;
 
 namespace CagedTunes
 {
     public class MusicLib
     {
         private DataSet musicDataSet;
-
+        const String API_KEY = "e1d7cac3d825c39c69e1e0f2a73ca7f8";
         public const string XML_MUSICFILE = "music.xml";
         public const string XSD_MUSICFILE = "music.xsd";
 
@@ -76,14 +79,54 @@ namespace CagedTunes
             row["filename"] = s.Filename;
             row["length"] = s.Length;
             row["genre"] = s.Genre;
+            row["pic"] = GetPic(s);
             table.Rows.Add(row);
 
             // Update this song's ID
             s.Id = Convert.ToInt32(row["id"]);
 
+
             return s.Id;
         }
-
+        private String GetPic(Song s)
+        {
+            
+            String url = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + API_KEY + "&" +
+            "artist=" + WebUtility.UrlEncode(s.Artist) + "&track=" + WebUtility.UrlEncode(s.Title);
+            try
+            {
+                
+            
+            HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream strm = response.GetResponseStream();
+                    using (XmlTextReader reader = new XmlTextReader(strm))
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader.NodeType == XmlNodeType.Element)
+                            {
+                                Console.WriteLine("name = " + reader.Name);
+                                if (reader.Name == "image")
+                                {
+                                    if (reader.GetAttribute("size") == "medium")
+                                        Console.WriteLine("Image URL = " + reader.ReadString());
+                                    return reader.ReadString();
+                                }
+                            }
+                        }
+                    }
+                    return "http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg";
+                }
+            }
+            catch (WebException e)
+            {
+                // A 400 response is returned when the song is not in their library
+                Console.WriteLine("Error: " + e.Message);
+                return "http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg";
+            }
+        }
         /// <summary>
         /// Return a Song for the given song ID. Returns null if the song was not found.
         /// </summary>
