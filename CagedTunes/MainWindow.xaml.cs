@@ -194,27 +194,6 @@ namespace CagedTunes
             MessageBox.Show(errorMessage, "MiniPlayer", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void btnPlay_Click(object sender, RoutedEventArgs e)
-        {
-            Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
-            if (s.Filename != currentlyPlaying)
-            {
-                mediaPlayer.Open(new Uri(s.Filename));
-                mediaPlayer.Play();
-                currentlyPlaying = s.Filename;
-            }
-        }
-
-        private void btnStop_Click(object sender, RoutedEventArgs e)
-        {
-            if (currentlyPlaying != null)
-            {
-                mediaPlayer.Open(new Uri(currentlyPlaying));
-                mediaPlayer.Stop();
-            }
-            currentlyPlaying = null;
-        }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             musicLib.Save();
