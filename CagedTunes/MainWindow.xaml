@@ -9,6 +9,7 @@
     <Window.CommandBindings>
         <CommandBinding Command="Delete" Executed="DeleteCommandBinding_Executed" />
         <CommandBinding Command="Replace" Executed="RenameCommandBinding_Executed" />
+        <CommandBinding Command="local:CustomCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
     </Window.CommandBindings>
     <Window.Resources>
         <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">

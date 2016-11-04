@@ -219,5 +219,29 @@ namespace CagedTunes
         {
             musicLib.Save();
         }
+
+        private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
+            e.CanExecute = s.Filename != currentlyPlaying;
+        }
+
+        private void Play_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
+            mediaPlayer.Open(new Uri(s.Filename));
+            mediaPlayer.Play();
+            currentlyPlaying = s.Filename;
+        }
+    }
+
+    public static class CustomCommands
+    {
+        public static readonly RoutedUICommand Play = new RoutedUICommand(
+            "Play", "Play", typeof(CustomCommands),
+            new InputGestureCollection()
+            {
+            new KeyGesture(Key.P, ModifierKeys.Control)
+            });
     }
 }
