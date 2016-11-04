@@ -79,8 +79,9 @@ namespace CagedTunes
             row["filename"] = s.Filename;
             row["length"] = s.Length;
             row["genre"] = s.Genre;
-            row["albumimage"] = GetPic(s);
             row["url"] = s.Url;
+            row["albumImage"] = GetPic(s);
+            
             table.Rows.Add(row);
 
             // Update this song's ID
@@ -148,6 +149,9 @@ namespace CagedTunes
                 song.Genre = row["genre"].ToString();
                 song.Length = row["length"].ToString();
                 song.Filename = row["filename"].ToString();
+                song.Url = row["url"].ToString();
+                song.Pic = row["albumImage"].ToString();
+                
 
                 return song;
             }
