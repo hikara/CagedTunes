@@ -222,8 +222,11 @@ namespace CagedTunes
 
         private void Play_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
-            e.CanExecute = s.Filename != currentlyPlaying;
+            if (musicGrid.SelectedItem != null)
+            {
+                Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
+                e.CanExecute = s.Filename != currentlyPlaying;
+            }
         }
 
         private void Play_Executed(object sender, ExecutedRoutedEventArgs e)
