@@ -78,13 +78,15 @@
                 <DataTemplate>
                     <Border Background="AliceBlue">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock FontWeight="Bold">Title:  <TextBlock Text="{Binding Title}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <TextBlock FontWeight="Bold">Artist:  <TextBlock Text="{Binding Artist}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <TextBlock FontWeight="Bold">Album:  <TextBlock Text="{Binding Album}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <TextBlock FontWeight="Bold">Genre:  <TextBlock Text="{Binding Genre}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <TextBlock FontWeight="Bold">Length:  <TextBlock Text="{Binding Length}" FontWeight="Normal"> </TextBlock></TextBlock>
-                            <Image Source="{Binding Pic}"></Image>
-                            <TextBlock FontWeight="Bold"><Hyperlink NavigateUri="{Binding Url}"  RequestNavigate="Hyperlink_RequestNavigate" FontWeight="Normal"><TextBlock Text="{Binding Url}"/></Hyperlink></TextBlock>
+                            <Canvas Height="110" Width="100">
+                                <Image Source="{Binding Pic}" Margin="0" Canvas.Top="10" Canvas.Left="-330"></Image>
+                                <TextBlock FontWeight="Bold" Canvas.Top="10" Canvas.Left="-290">Title:  <TextBlock Text="{Binding Title}" FontWeight="Normal" > </TextBlock></TextBlock>
+                                <TextBlock FontWeight="Bold" Canvas.Top="25" Canvas.Left="-290">Artist:  <TextBlock Text="{Binding Artist}" FontWeight="Normal"> </TextBlock></TextBlock>
+                                <TextBlock FontWeight="Bold" Canvas.Top="40" Canvas.Left="-290">Album:  <TextBlock Text="{Binding Album}" FontWeight="Normal"> </TextBlock></TextBlock>
+                                <TextBlock FontWeight="Bold" Canvas.Top="55" Canvas.Left="-290">Genre:  <TextBlock Text="{Binding Genre}" FontWeight="Normal"> </TextBlock></TextBlock>
+                                <TextBlock FontWeight="Bold" Canvas.Top="70" Canvas.Left="-290">Length:  <TextBlock Text="{Binding Length}" FontWeight="Normal"> </TextBlock></TextBlock>
+                                <TextBlock FontWeight="Bold" Canvas.Top="85" Canvas.Left="-290"><Hyperlink NavigateUri="{Binding Url}"  RequestNavigate="Hyperlink_RequestNavigate" FontWeight="Normal"><TextBlock Text="{Binding Url}"/></Hyperlink></TextBlock>
+                            </Canvas>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
