@@ -63,25 +63,6 @@
     <genre>Alternative</genre>
   </song>
   <song>
-    <id>17</id>
-    <title>Black Tar</title>
-    <artist />
-    <album>Xenoblade Chronicles X</album>
-    <filename>C:\Users\jnesbit3\Desktop\New folder\Black Tar.mp3</filename>
-    <length>2:29</length>
-    <genre />
-    <albumImage>http://www.thrashhits.com/wpress/wp-content/uploads/2012/06/nickelcage-2-500x375.jpg</albumImage>
-  </song>
-  <song>
-    <id>18</id>
-    <title>BIOS-D (feat. Mika Kobayashi)</title>
-    <artist />
-    <album>Guilty Crown Original Soundtrack</album>
-    <filename>C:\Users\jnesbit3\Desktop\New folder\BIOS-D (feat. Mika Kobayashi).mp3</filename>
-    <length>2:36</length>
-    <genre>Anime</genre>
-  </song>
-  <song>
     <id>19</id>
     <title>進撃 st-hrn-gt-pf20130629 巨人</title>
     <artist />
@@ -100,11 +81,6 @@
     <song_id>9</song_id>
     <playlist_name>Cool stuff</playlist_name>
     <position>1</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>10</song_id>
-    <playlist_name>Cool stuff</playlist_name>
-    <position>2</position>
   </playlist_song>
   <playlist_song>
     <song_id>14</song_id>

@@ -204,7 +204,14 @@ namespace CagedTunes
             if (musicGrid.SelectedItem != null)
             {
                 Song s = musicLib.GetSong(((Song)musicGrid.SelectedItem).Id);
-                e.CanExecute = s.Filename != currentlyPlaying;
+                if (s.Filename != null)
+                {
+                    e.CanExecute = s.Filename != currentlyPlaying;
+                }
+                else
+                {
+                    e.CanExecute = false;
+                }
             }
         }
 
@@ -227,6 +234,32 @@ namespace CagedTunes
         {
             e.CanExecute = currentlyPlaying != null;
         }
+
+        private void DeleteSongFromAllMusicBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (playlistBox.SelectedItem.ToString() == "All Music")
+            {
+                
+                MessageBoxButton buttons = MessageBoxButton.YesNo;
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to delete this song?", "Delete A Song", buttons);
+               
+                if (result == MessageBoxResult.Yes)
+                {
+                    musicLib.DeleteSong(((Song)musicGrid.SelectedItem).Id);
+                    if (musicGrid.Items.Count > 0)
+                    {
+                        musicGrid.SelectedItem = musicGrid.Items[0];
+                    }
+                }
+                initializeMusicGrid();
+            }
+            else
+            {
+                musicLib.RemoveSongFromPlaylist(((Song)musicGrid.SelectedItem).Position, ((Song)musicGrid.SelectedItem).Id, playlistBox.SelectedItem.ToString());
+                setMusicGridItems(musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString()));
+
+            }
+        }
     }
 
     public static class CustomCommands
@@ -236,6 +269,13 @@ namespace CagedTunes
             new InputGestureCollection()
             {
             new KeyGesture(Key.P, ModifierKeys.Control)
+            });
+
+        public static readonly RoutedUICommand DeleteSongFromAllMusic = new RoutedUICommand(
+            "DeleteSongFromAllMusic", "DeleteSongFromAllMusic", typeof(CustomCommands),
+            new InputGestureCollection()
+            {
+            new KeyGesture(Key.Delete)
             });
     }
 }

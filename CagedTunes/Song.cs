@@ -8,6 +8,7 @@ namespace CagedTunes
     public class Song
     {
         public int Id { set; get; }
+        public int Position { set; get; }
         public string Title { set; get; }
         public string Artist { set; get; }
         public string Album { set; get; }
@@ -24,7 +25,7 @@ namespace CagedTunes
             if (s == null)
                 return false;
 
-            return s.Id == Id && s.Title == Title && s.Artist == Artist &&
+            return s.Id == Id && s.Position == Position && s.Title == Title && s.Artist == Artist &&
                 s.Album == Album && s.Genre == Genre && s.Length == Length &&
                 s.Filename == Filename && s.Pic == Pic && s.Url == Url;
         }

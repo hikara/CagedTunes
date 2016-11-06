@@ -483,6 +483,7 @@ namespace CagedTunes
                 var stringArray = newRow.ItemArray.Cast<string>().ToArray();
                 Song s = new Song();
                 s.Id = Convert.ToInt32(stringArray[0]);
+                s.Position = Convert.ToInt32(stringArray[1]);
                 s.Title = stringArray[2];
                 s.Artist = stringArray[3];
                 s.Album = stringArray[4];

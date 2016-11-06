@@ -11,6 +11,7 @@
         <CommandBinding Command="Replace" Executed="RenameCommandBinding_Executed" />
         <CommandBinding Command="Stop" CanExecute="Stop_CanExecute" Executed="Stop_Executed" />
         <CommandBinding Command="local:CustomCommands.Play" CanExecute="Play_CanExecute" Executed="Play_Executed" />
+        <CommandBinding Command="local:CustomCommands.DeleteSongFromAllMusic" Executed="DeleteSongFromAllMusicBinding_Executed" />
     </Window.CommandBindings>
     <Window.Resources>
         <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
@@ -69,6 +70,7 @@
         <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding Position}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Title}" Header="Title"/>
                 <DataGridTextColumn Binding="{Binding Artist}" Header="Artist"/>
                 <DataGridTextColumn Binding="{Binding Album}" Header="Album"/>
@@ -94,6 +96,8 @@
                     <MenuItem Command="local:CustomCommands.Play">
                     </MenuItem>
                     <MenuItem Command="Stop">
+                    </MenuItem>
+                    <MenuItem Command="local:CustomCommands.DeleteSongFromAllMusic" Header="Delete">
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
