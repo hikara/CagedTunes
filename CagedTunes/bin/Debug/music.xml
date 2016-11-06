@@ -53,24 +53,6 @@
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Imagine+Dragons/_/Radioactive</url>
   </song>
-  <song>
-    <id>16</id>
-    <title>No New Tale to Tell</title>
-    <artist>Various Artists</artist>
-    <album>New Tales to Tell - A Tribute to Love and Rockets (Bonus Track Version)</album>
-    <filename>C:\Users\fmccown\Music\iTunes\iTunes Media\Music\Compilations\New Tales to Tell - A Tribute to Love an\1-04 No New Tale to Tell.m4a</filename>
-    <length>3:17</length>
-    <genre>Alternative</genre>
-  </song>
-  <song>
-    <id>19</id>
-    <title>進撃 st-hrn-gt-pf20130629 巨人</title>
-    <artist />
-    <album>TVアニメ「進撃の巨人」オリジナルサウンドトラック II</album>
-    <filename>C:\Users\jthomps6\Desktop\Music\04. 進撃 st-hrn-gt-pf20130629 巨人.mp3</filename>
-    <length>4:37</length>
-    <genre>Anime</genre>
-  </song>
   <playlist>
     <name>Cool stuff</name>
   </playlist>
@@ -91,5 +73,15 @@
     <song_id>9</song_id>
     <playlist_name>Energize</playlist_name>
     <position>2</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>2</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>3</position>
   </playlist_song>
 </music>

@@ -28,6 +28,7 @@ namespace CagedTunes
         private AboutForm aboutForm;
         private RenamePlaylist renamePlaylist;
         private String currentlyPlaying = null;
+        private Point startPoint;
 
         public MainWindow()
         {
@@ -259,6 +260,66 @@ namespace CagedTunes
                 setMusicGridItems(musicLib.GetSongsFromPlaylist(playlistBox.SelectedItem.ToString()));
 
             }
+        }
+
+        private void musicGrid_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Get the current mouse position
+            Point mousePos = e.GetPosition(null);
+            Vector diff = startPoint - mousePos;
+
+            // Start the drag-drop if mouse has moved far enough
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
+            {
+                String Id =((Song)musicGrid.SelectedItem).Id.ToString();
+                // Initiate dragging the text from the textbox
+                DragDrop.DoDragDrop(musicGrid, Id, DragDropEffects.Copy);
+            }
+        }
+
+        private void musicGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            startPoint = e.GetPosition(null);
+        }
+
+        private void playlistListBox_DragOver(object sender, DragEventArgs e)
+        {
+            if (sender.ToString().Substring(31) == "All Music")
+            {
+                e.Effects = DragDropEffects.None;
+            }
+            else
+            {
+                // If the DataObject contains string data, extract it
+                if (e.Data.GetDataPresent(DataFormats.StringFormat))
+                {
+                    string dataString = (string)e.Data.GetData(DataFormats.StringFormat);
+
+                    // If the string can be converted into a Brush, allow dropping
+                    BrushConverter converter = new BrushConverter();
+                    if (converter.IsValid(dataString))
+                    {
+                        e.Effects = DragDropEffects.Copy;
+                    }
+                }
+            }
+           
+        }
+        private void playlistListBox_Drop(object sender, DragEventArgs e)
+        {
+            // If the DataObject contains string data, extract it
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string dataString = (string)e.Data.GetData(DataFormats.StringFormat);
+                musicLib.AddSongToPlaylist(Convert.ToInt32(dataString), sender.ToString().Substring(31));
+            }
+        }
+
+        private void Label_Drop(object sender, DragEventArgs e)
+        {
+
         }
     }
 

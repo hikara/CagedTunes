@@ -55,6 +55,12 @@
                     </MenuItem>
                 </ContextMenu>
             </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding}" AllowDrop="True" DragOver="playlistListBox_DragOver" Drop="playlistListBox_Drop"></Label>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
         </ListBox>
         <ToolBar x:Name="playlistAdditionsAndInfoBar" Height="41" VerticalAlignment="Top">
             <Button x:Name="addNewSong" Height="35" VerticalAlignment="Top" Width="45" Click="addNewSong_Click">
@@ -67,7 +73,7 @@
                 <Image Source="info.png"></Image>
             </Button>
         </ToolBar>
-        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35">
+        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35" MouseMove="musicGrid_MouseMove" MouseLeftButtonDown="musicGrid_PreviewMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Position}" Visibility="Hidden"/>
@@ -97,7 +103,7 @@
                     </MenuItem>
                     <MenuItem Command="Stop">
                     </MenuItem>
-                    <MenuItem Command="local:CustomCommands.DeleteSongFromAllMusic" Header="Delete">
+                    <MenuItem Command="local:CustomCommands.DeleteSongFromAllMusic" Header="Remove">
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
