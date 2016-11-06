@@ -479,6 +479,7 @@ namespace CagedTunes
             DataTable table = SongsForPlaylist(playlistName);
             foreach (DataRow newRow in table.Rows)
             {
+                //http://stackoverflow.com/questions/3749224/how-can-i-convert-datarow-to-string-array
                 var stringArray = newRow.ItemArray.Cast<string>().ToArray();
                 Song s = new Song();
                 s.Id = Convert.ToInt32(stringArray[0]);
