@@ -48,7 +48,7 @@ namespace CagedTunes
                 musicGrid.IsReadOnly = false;
                 initializeMusicGrid();
             }    
-            else if (sender.ToString().Substring(37,7) != ".Count:")
+            else if (sender.ToString().Substring(37).Length <= 7 || sender.ToString().Substring(37,7) != ".Count:")
             {
                 musicGrid.IsReadOnly = true;
                 setMusicGridItems(musicLib.GetSongsFromPlaylist(sender.ToString().Substring(37)));
