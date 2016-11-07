@@ -72,12 +72,14 @@
             <Button x:Name="about" Height="35" VerticalAlignment="Top" Width="45" Click="about_Click">
                 <Image Source="info.png"></Image>
             </Button>
+            <TextBox x:Name="textBox" Height="36" Margin="0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="textBox1" Height="36" Margin="0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         </ToolBar>
-        <DataGrid x:Name="musicGrid" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35" MouseMove="musicGrid_MouseMove" MouseLeftButtonDown="musicGrid_PreviewMouseLeftButtonDown">
+        <DataGrid x:Name="musicGrid" AllowDrop="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35" MouseMove="musicGrid_MouseMove" MouseLeftButtonDown="musicGrid_PreviewMouseLeftButtonDown">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Position}" Visibility="Hidden"/>
-                <DataGridTextColumn Binding="{Binding Title}" Header="Title"/>
+                <DataGridTextColumn Binding="{Binding Title}" Header="Title" />
                 <DataGridTextColumn Binding="{Binding Artist}" Header="Artist"/>
                 <DataGridTextColumn Binding="{Binding Album}" Header="Album"/>
                 <DataGridTextColumn Binding="{Binding Genre}" Header="Genre"/>

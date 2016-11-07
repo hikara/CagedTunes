@@ -109,11 +109,11 @@ namespace CagedTunes
                         {
                             if (reader.NodeType == XmlNodeType.Element)
                             {
-                                Console.WriteLine("name = " + reader.Name);
+                                //Console.WriteLine("name = " + reader.Name);
                                 if (reader.Name == "image")
                                 {
                                     if (reader.GetAttribute("size") == "medium")
-                                        Console.WriteLine("Image URL = " + reader.ReadString());
+                                        //Console.WriteLine("Image URL = " + reader.ReadString());
                                     return reader.ReadString();
                                 }
                             }
@@ -230,29 +230,29 @@ namespace CagedTunes
         public void Save()
         {
             // Save music.xml 
-            Console.WriteLine("Saving " + XML_MUSICFILE);
+            //Console.WriteLine("Saving " + XML_MUSICFILE);
             musicDataSet.WriteXml(XML_MUSICFILE);
         }
 
         /// <summary>
-        /// Debug information displaying all the table data in the console.
+        /// Debug information displaying all the table data in the ////Console.
         /// </summary>
         public void PrintAllTables()
         {
             foreach (DataTable table in musicDataSet.Tables)
             {
-                Console.WriteLine("Table name = " + table.TableName);
+                ////Console.WriteLine("Table name = " + table.TableName);
                 foreach (DataRow row in table.Rows)
                 {
-                    Console.WriteLine("Row:");
+                    ////Console.WriteLine("Row:");
                     int i = 0;
                     foreach (Object item in row.ItemArray)
                     {
-                        Console.WriteLine(" " + table.Columns[i].Caption + "=" + item);
+                        ////Console.WriteLine(" " + table.Columns[i].Caption + "=" + item);
                         i++;
                     }
                 }
-                Console.WriteLine();
+                ////Console.WriteLine();
             }
         }
 
@@ -265,7 +265,7 @@ namespace CagedTunes
         /// <returns>True if the playlist was successfully added</returns>
         public bool AddPlaylist(string playlist)
         {
-            Console.WriteLine("AddPlaylist: " + playlist);
+            ////Console.WriteLine("AddPlaylist: " + playlist);
             DataTable table = musicDataSet.Tables["playlist"];
             DataRow row = table.NewRow();
             row["name"] = playlist;
@@ -294,7 +294,7 @@ namespace CagedTunes
         /// <returns>True if the playlist's name was successfully changed</returns>
         public bool RenamePlaylist(string oldPlaylistName, string newPlaylistName)
         {
-            Console.WriteLine("RenamePlaylist: " + oldPlaylistName + " to " + newPlaylistName);
+            //Console.WriteLine("RenamePlaylist: " + oldPlaylistName + " to " + newPlaylistName);
 
             // Update playlist name in playlist and playlist_song tables
 
@@ -372,7 +372,7 @@ namespace CagedTunes
             row["position"] = pos + 1;
             table.Rows.Add(row);
 
-            Console.WriteLine("Adding " + songId + " to " + playlist + " at pos " + (pos + 1));
+            //Console.WriteLine("Adding " + songId + " to " + playlist + " at pos " + (pos + 1));
         }
 
         /// <summary>
@@ -382,7 +382,7 @@ namespace CagedTunes
         /// <returns></returns>
         private int GetLastPosition(string playlist)
         {
-            Console.WriteLine("playlist=" + playlist);
+            //Console.WriteLine("playlist=" + playlist);
             DataTable table = musicDataSet.Tables["playlist_song"];
             var positions = from row in table.AsEnumerable()
                             where (string)row["playlist_name"] == playlist
@@ -398,8 +398,8 @@ namespace CagedTunes
         /// <param name="playlist"></param>
         public void RemoveSongFromPlaylist(int position, int songId, string playlist)
         {
-            Console.WriteLine("RemoveSongFromPlaylist: id=" + songId + ", pos=" + position +
-                ", playlist=" + playlist);
+            //Console.WriteLine("RemoveSongFromPlaylist: id=" + songId + ", pos=" + position +
+              //  ", playlist=" + playlist);
 
             // Search the primary key for this playlist and delete it from the playlist table
             DataTable table = musicDataSet.Tables["playlist_song"];
@@ -456,10 +456,10 @@ namespace CagedTunes
                             Genre = r2["genre"]
                         };
 
-            Console.WriteLine("Songs for playlist " + playlist + ":");
+            //Console.WriteLine("Songs for playlist " + playlist + ":");
             foreach (var s in songs)
             {
-                Console.WriteLine(s.ToString());
+                //Console.WriteLine(s.ToString());
                 DataRow newRow = table.NewRow();
                 newRow["id"] = s.Id;
                 newRow["position"] = s.Position;

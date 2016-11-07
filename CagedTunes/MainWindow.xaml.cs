@@ -39,6 +39,7 @@ namespace CagedTunes
             initializeMusicLib();
             initializeMusicGrid();
             initializePlaylistBox();
+            musicGrid.IsReadOnly = true;
         }
 
 
@@ -46,12 +47,10 @@ namespace CagedTunes
         {
             if (sender.ToString().Substring(37) == "All Music")
             {
-                musicGrid.IsReadOnly = false;
                 initializeMusicGrid();
             }    
             else if (sender.ToString().Substring(37).Length <= 7 || sender.ToString().Substring(37,7) != ".Count:")
             {
-                musicGrid.IsReadOnly = true;
                 setMusicGridItems(musicLib.GetSongsFromPlaylist(sender.ToString().Substring(37)));
             }
         }
@@ -273,7 +272,7 @@ namespace CagedTunes
                 (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
                 Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
             {
-                String Id =((Song)musicGrid.SelectedItem).Id.ToString();
+                string Id = ((Song)musicGrid.SelectedItem).Id.ToString();
                 // Initiate dragging the text from the textbox
                 DragDrop.DoDragDrop(musicGrid, Id, DragDropEffects.Copy);
             }
@@ -317,10 +316,6 @@ namespace CagedTunes
             }
         }
 
-        private void Label_Drop(object sender, DragEventArgs e)
-        {
-
-        }
     }
 
     public static class CustomCommands

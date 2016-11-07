@@ -84,4 +84,34 @@
     <playlist_name>Cool stuff</playlist_name>
     <position>3</position>
   </playlist_song>
+  <playlist_song>
+    <song_id>9</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>4</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>Energize</playlist_name>
+    <position>3</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>10</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>5</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>6</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>7</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>8</position>
+  </playlist_song>
 </music>
