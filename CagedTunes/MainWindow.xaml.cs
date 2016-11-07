@@ -316,6 +316,7 @@ namespace CagedTunes
             }
         }
 
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
