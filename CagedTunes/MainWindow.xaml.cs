@@ -41,6 +41,17 @@ namespace CagedTunes
             initializePlaylistBox();
             musicGrid.IsReadOnly = true;
         }
+        private void musicGrid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            if (playlistBox.SelectedIndex == 0)
+            {
+                DankMemes.Header = "Remove";
+            }
+            else
+            {
+                DankMemes.Header = "Remove from playlist";
+            }
+        }
 
 
         private void playlistBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

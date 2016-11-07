@@ -73,7 +73,7 @@
                 <Image Source="info.png"></Image>
             </Button>
         </ToolBar>
-        <DataGrid x:Name="musicGrid" AllowDrop="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35" MouseMove="musicGrid_MouseMove" MouseLeftButtonDown="musicGrid_PreviewMouseLeftButtonDown">
+        <DataGrid x:Name="musicGrid" AllowDrop="False" CanUserAddRows="False" SelectionMode="Single" AutoGenerateColumns="False" Margin="126,55,10,35" MouseMove="musicGrid_MouseMove" MouseLeftButtonDown="musicGrid_PreviewMouseLeftButtonDown" ContextMenuOpening="musicGrid_ContextMenuOpening">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding Position}" Visibility="Hidden"/>
@@ -105,7 +105,7 @@
                     </MenuItem>
                     <MenuItem Command="Stop">
                     </MenuItem>
-                    <MenuItem Command="local:CustomCommands.DeleteSongFromAllMusic" Header="Remove">
+                    <MenuItem Command="local:CustomCommands.DeleteSongFromAllMusic" Header="Remove" Name="DankMemes">
                     </MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>

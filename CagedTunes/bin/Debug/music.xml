@@ -81,11 +81,6 @@
     <name>asdfa</name>
   </playlist>
   <playlist_song>
-    <song_id>9</song_id>
-    <playlist_name>Cool stuff</playlist_name>
-    <position>1</position>
-  </playlist_song>
-  <playlist_song>
     <song_id>14</song_id>
     <playlist_name>Energize</playlist_name>
     <position>1</position>
@@ -98,17 +93,17 @@
   <playlist_song>
     <song_id>11</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>2</position>
+    <position>1</position>
   </playlist_song>
   <playlist_song>
     <song_id>10</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>3</position>
+    <position>2</position>
   </playlist_song>
   <playlist_song>
     <song_id>9</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>4</position>
+    <position>3</position>
   </playlist_song>
   <playlist_song>
     <song_id>11</song_id>
@@ -117,6 +112,11 @@
   </playlist_song>
   <playlist_song>
     <song_id>10</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>4</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>11</song_id>
     <playlist_name>Cool stuff</playlist_name>
     <position>5</position>
   </playlist_song>
@@ -131,14 +131,9 @@
     <position>7</position>
   </playlist_song>
   <playlist_song>
-    <song_id>11</song_id>
-    <playlist_name>Cool stuff</playlist_name>
-    <position>8</position>
-  </playlist_song>
-  <playlist_song>
     <song_id>16</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>9</position>
+    <position>8</position>
   </playlist_song>
   <playlist_song>
     <song_id>15</song_id>
