@@ -53,11 +53,32 @@
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Imagine+Dragons/_/Radioactive</url>
   </song>
+  <song>
+    <id>16</id>
+    <title>Alpha</title>
+    <artist />
+    <album>Guilty Crown Original Soundtrack</album>
+    <filename>C:\Users\jthomps6\Desktop\Music\Alpha.mp3</filename>
+    <length>5:48</length>
+    <genre>Anime</genre>
+  </song>
+  <song>
+    <id>17</id>
+    <title>Black Tar</title>
+    <artist />
+    <album>Xenoblade Chronicles X</album>
+    <filename>C:\Users\jthomps6\Desktop\Music\Black Tar.mp3</filename>
+    <length>2:29</length>
+    <genre />
+  </song>
   <playlist>
     <name>Cool stuff</name>
   </playlist>
   <playlist>
     <name>Energize</name>
+  </playlist>
+  <playlist>
+    <name>asdfa</name>
   </playlist>
   <playlist_song>
     <song_id>9</song_id>
@@ -113,5 +134,20 @@
     <song_id>11</song_id>
     <playlist_name>Cool stuff</playlist_name>
     <position>8</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>16</song_id>
+    <playlist_name>Cool stuff</playlist_name>
+    <position>9</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>15</song_id>
+    <playlist_name>asdfa</playlist_name>
+    <position>1</position>
+  </playlist_song>
+  <playlist_song>
+    <song_id>17</song_id>
+    <playlist_name>asdfa</playlist_name>
+    <position>2</position>
   </playlist_song>
 </music>
