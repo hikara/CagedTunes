@@ -329,7 +329,24 @@ namespace CagedTunes
 
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if (playlistBox.SelectedItem.ToString() == "All Music")
+            {
+                initializeMusicGrid();
+                ObservableCollection<Song> songs = new ObservableCollection<Song>();
+                for (int i = 0; i < musicGrid.Items.Count; i++)
+                {
+                    Song s = (Song)musicGrid.Items[i];
+                    if (searchBox.Text.Trim() == "" || s.Title.IndexOf(searchBox.Text) != -1 || s.Artist.IndexOf(searchBox.Text) != -1 || (s.Album.IndexOf(searchBox.Text) != -1))
+                    {
+                        songs.Add(s);
+                    }
+                }
+                setMusicGridItems(songs);
+            }
+            else
+            {
+                setMusicGridItems(musicLib.GetSongsForQueryString(playlistBox.SelectedItem.ToString(), searchBox.Text));
+            }  
         }
     }
 

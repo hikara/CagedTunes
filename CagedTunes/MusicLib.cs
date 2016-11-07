@@ -510,5 +510,28 @@ namespace CagedTunes
             };
             return s;
         }
+
+        public ObservableCollection<Song> GetSongsForQueryString(string playlistName, string searchString)
+        {
+            ObservableCollection<Song> songs = new ObservableCollection<Song>();
+            DataTable table = SongsForPlaylist(playlistName);
+            foreach (DataRow newRow in table.Rows)
+            {
+                //http://stackoverflow.com/questions/3749224/how-can-i-convert-datarow-to-string-array
+                var stringArray = newRow.ItemArray.Cast<string>().ToArray();
+                Song s = new Song();
+                s.Id = Convert.ToInt32(stringArray[0]);
+                s.Position = Convert.ToInt32(stringArray[1]);
+                s.Title = stringArray[2];
+                s.Artist = stringArray[3];
+                s.Album = stringArray[4];
+                s.Genre = stringArray[5];
+                if (searchString.Trim() == "" || s.Title.IndexOf(searchString) != -1 || s.Artist.IndexOf(searchString) != -1 || (s.Album.IndexOf(searchString) != -1))
+                {
+                    songs.Add(s);
+                }
+            }
+            return songs;
+        }
     }
 }
